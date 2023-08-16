@@ -13,6 +13,28 @@ module keyPad(reset, equals, clk, digit, door_status_correct, door_status_incorr
 	//wire [3:0] feed_digit;
 	
 	
+	//39008121
+	//finish
+	//if incorrect goes to a separate state.
+	localparam XInit = 5'd0;
+	localparam XFinish = 5'd1;
+	localparam XIncorrect = 5'd2;
+	localparam XCheckFirstDigit = 4'd3;
+	localparam XGetSecond = 5'd4;
+	localparam XCheckSecondDigit = 5'd5;
+	localparam XGetThird = 5'd6;
+	localparam XCheckThirdDigit = 5'd7;
+	localparam XGetFourth = 5'd8;
+	localparam XCheckFourthDigit = 5'd9;
+	localparam XGetFifth = 5'd10;
+	localparam XCheckFifthDigit = 5'd11;
+	localparam XGetSixth = 5'd12;
+	localparam XCheckSixthDigit = 5'd13;
+	localparam XGetSeventh = 5'd14;
+	localparam XCheckSeventhDigit = 5'd15;
+	localparam XGetEigth = 5'd16;
+	localparam XCheckEigthDigit = 5'd17;
+
 
 	
 	//so have two outputs incorrect and correct.
@@ -41,27 +63,6 @@ module keyPad(reset, equals, clk, digit, door_status_correct, door_status_incorr
 		stored_digit <= LD_N ? digit : stored_digit;
 	end
 	
-	//39008121
-	//finish
-	//if incorrect goes to a separate state.
-	localparam XInit = 5'd0;
-	localparam XFinish = 5'd1;
-	localparam XIncorrect = 5'd2;
-	localparam XCheckFirstDigit = 4'd3;
-	localparam XGetSecond = 5'd4;
-	localparam XCheckSecondDigit = 5'd5;
-	localparam XGetThird = 5'd6;
-	localparam XCheckThirdDigit = 5'd7;
-	localparam XGetFourth = 5'd8;
-	localparam XCheckFourthDigit = 5'd9;
-	localparam XGetFifth = 5'd10;
-	localparam XCheckFifthDigit = 5'd11;
-	localparam XGetSixth = 5'd12;
-	localparam XCheckSixthDigit = 5'd13;
-	localparam XGetSeventh = 5'd14;
-	localparam XCheckSeventhDigit = 5'd15;
-	localparam XGetEigth = 5'd16;
-	localparam XCheckEigthDigit = 5'd17;
 	//data path state uodate.
 	//need to reset here as well. 
 	//combinational portion

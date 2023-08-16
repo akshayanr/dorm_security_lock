@@ -4,11 +4,17 @@ module dorm_security_lock(reset, open, clk, door_status_correct, door_status_inc
 	//open and reset, keeps so if correct still open. 
 	//not open or closed, no number entered it keeps door status.
 	input reset, clk, door_status_correct, door_status_incorrect, open;
-	reg [1:0]state, next_state;
+	reg [0:0] state, next_state;
 	output doorOpen;
 	
 	localparam closed = 2'd0;
 	localparam open_param = 2'd1;
+	
+	
+	initial begin
+		state <= closed;
+	end
+	
 	always @(posedge clk)
 		if(reset)
 			state <= closed;
