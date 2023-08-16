@@ -1,0 +1,3 @@
+module dorm_security_lock(reset,clk, E, NL, EL, W, ETL, NLTL, ELTL, WTL);
+
+endmodule
